@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package crack;
+
+message CrackRequest{
+    int64 UserID = 1;
+    int64 TokenID = 2;
+}
+
+message CrackResponse{
+    bool Success = 1;
+    string Message = 2;
+}
+
+service Crack{
+    rpc CrackToken (CrackRequest) returns (CrackResponse){}
+}
